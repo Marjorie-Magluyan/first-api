@@ -4,33 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data = [
-            [
-                "id" => 1,
-                "name" => "Marjorie M",
-                "username" => "coco",
-                "email" => "marjorie@gmail.com",
-                "phone" => "2323232"
-            ],
-
-            [
-                "id" => 1,
-                "name" => "Marj M",
-                "username" => "coca",
-                "email" => "marjori@gmail.com",
-                "phone" => "2323233e2"
-            ],
-
-        ];
-
-        return response()->json($data);
+        //
     }
 
     /**
@@ -38,7 +19,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return response()->json($request);
     }
 
     /**
@@ -62,6 +43,8 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        return response()->json([
+            "message" => $id . " was deleted successfully"
+        ]);
     }
 }
